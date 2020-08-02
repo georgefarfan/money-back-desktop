@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require("electron");
-
+const ejse = require("ejs-electron");
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
