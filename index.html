@@ -17,6 +17,7 @@
       rel="stylesheet"
       href="./libs/bootstrap-4.5.0-dist/js/bootstrap.min.js"
     />
+    <script src="./src.js"></script>
   </head>
 
   <body>
@@ -38,7 +39,12 @@
             Carga tu gastos diarios, o los que te hayas olvidados dependiendo la
             fecha.
           </p>
-          <button class="btn btn-lg btn-outline-info">Cargar gastos</button>
+          <button
+            class="btn btn-lg btn-outline-info"
+            onclick="openNewExpense()"
+          >
+            Cargar gastos
+          </button>
         </div>
         <div class="col-4">
           <p>
@@ -54,7 +60,6 @@
           <button class="btn btn-lg btn-outline-info">
             Gastos liquidados
           </button>
-          <a href="./pages/load-expanse.html">profile</a>
         </div>
       </div>
     </div>

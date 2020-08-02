@@ -1,3 +1,9 @@
 .header-line {
   border-bottom: 2px solid rgba(23, 162, 184, 0.5);
 }
+
+#new-expenses {
+  height: 50px;
+  font-size: 20px;
+  font-weight: 900;
+}
