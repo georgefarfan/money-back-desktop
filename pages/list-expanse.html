@@ -1,49 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>MoneyBack - list expenses</title>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline';"
-    />
-    <link
-      rel="stylesheet"
-      href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../style.css" />
 
-    <link
-      rel="stylesheet"
-      href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>MoneyBack - list expenses</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../style.css" />
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-3 mt-4">
-          <button
-            onclick="goHome()"
-            class="btn btn-md btn-info font-weight-bold"
-          >
-            < Volver a inicio
-          </button>
-        </div>
-      </div>
+  <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js" />
+</head>
 
-      <div class="row mb-3 mt-2">
-        <div class="col-md-12 col-12 d-flex justify-content-center">
-          <dir class="d-flex">
-            <h2 class="font-weight-bold">Carga de gastos</h2>
-            <p class="header-line">
-              Con <strong>Money Back</strong> podes organizar tus gastos de
-              manera rápida y sencilla. Controla tus finanzas cuando quieras.
-            </p>
-          </dir>
-        </div>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3 mt-4">
+        <button onclick="goHome()" class="btn btn-md btn-info font-weight-bold">
+          < Volver a inicio </button>
       </div>
     </div>
-    <script src="./list-expanse.js"></script>
-  </body>
+
+    <div class="row mb-3 mt-2">
+      <div class="col-md-12 col-12 d-flex justify-content-center">
+        <dir class="d-flex">
+          <h2 class="font-weight-bold">Carga de gastos</h2>
+          <p class="header-line">
+            Con <strong>Money Back</strong> podes organizar tus gastos de
+            manera rápida y sencilla. Controla tus finanzas cuando quieras.
+          </p>
+        </dir>
+      </div>
+    </div>
+    <div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <script src="./list-expanse.js"></script>
+</body>
+
 </html>

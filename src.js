@@ -13,3 +13,4 @@ function openClosesExpense() {
 function openGraphExpenses() {
   window.location.href = "./pages/graph-expanses.html";
 }
+
