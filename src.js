@@ -9,3 +9,7 @@ function openShowExpense() {
 function openClosesExpense() {
   window.location.href = "./pages/liquidated-expanses.html";
 }
+
+function openGraphExpenses() {
+  window.location.href = "./pages/graph-expanses.html";
+}
