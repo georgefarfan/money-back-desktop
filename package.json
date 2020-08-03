@@ -13,6 +13,7 @@
     "electron": "^9.1.2"
   },
   "dependencies": {
+    "chart.js": "^2.9.3",
     "ejs-electron": "^2.1.0",
     "jquery": "^3.5.1",
     "mustache": "^4.0.1",
