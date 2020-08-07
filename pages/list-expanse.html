@@ -6,8 +6,7 @@
   <title>MoneyBack - list expenses</title>
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../style.css" />
-
+  <link rel="stylesheet" href="../styles/style.css" />
   <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js" />
 </head>
 
@@ -31,53 +30,31 @@
         </dir>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-12 d-flex justify-content-end">
+        <button class="btn btn-lg btn-info mb-2" onclick="loadExpenses()">Actualizar</button>
+      </div>
+    </div>
     <div>
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Description del gasto</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Tipo de gasto</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
         </tbody>
       </table>
 
     </div>
   </div>
   <script src="./list-expanse.js"></script>
+  <script src="../environments/environment-local.js" type="module"></script>
 </body>
 
 </html>

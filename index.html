@@ -1,101 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>MoneyBack</title>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline';"
-    />
-    <link
-      rel="stylesheet"
-      href="./libs/bootstrap-4.5.0-dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
 
-    <link
-      rel="stylesheet"
-      href="./libs/bootstrap-4.5.0-dist/js/bootstrap.min.js"
-    />
-    <script src="./src.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>MoneyBack</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <link rel="stylesheet" href="./libs/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
 
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-12 d-flex justify-content-center p-5">
-          <dir class="d-flex">
-            <h2 class="font-weight-bold">Money Back</h2>
-            <p class="header-line">
-              Con <strong>Money Back</strong> podes organizar tus gastos de
-              manera rápida y sencilla. Controla tus finanzas.
-            </p>
-          </dir>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <p>
-            Carga tu gastos diarios, o los que te hayas olvidados dependiendo la
-            fecha.
+  <link rel="stylesheet" href="./libs/bootstrap-4.5.0-dist/js/bootstrap.min.js" />
+  <script src="./src.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-12 d-flex justify-content-center p-5">
+        <dir class="d-flex">
+          <h2 class="font-weight-bold">Money Back</h2>
+          <p class="header-line">
+            Con <strong>Money Back</strong> podes organizar tus gastos de
+            manera rápida y sencilla. Controla tus finanzas.
           </p>
-          <button
-            class="btn btn-lg btn-outline-info"
-            onclick="openNewExpense()"
-          >
-            Cargar gastos
-          </button>
-        </div>
-        <div class="col-4">
-          <p>
-            Visualiza todos tus gastos cargados en MoneyBack.
-          </p>
-          <button
-            class="btn btn-lg btn-outline-info"
-            onclick="openShowExpense()"
-          >
-            Ver gastos
-          </button>
-        </div>
-        <div class="col-4">
-          <p>
-            Revisa todos tus gastos liquidados. Cada cierto tiempo se deben
-            cerrar los gastos en periodos.
-          </p>
-          <button
-            class="btn btn-lg btn-outline-info"
-            onclick="openClosesExpense()"
-          >
-            Gastos liquidados
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <p>
-            Revisa tus gastos marcados como favoritos y los que fueron guardados
-            por distintos motivos.
-          </p>
-          <button
-            class="btn btn-lg btn-outline-info"
-            onclick="openClosesExpense()"
-          >
-            Ver gastos
-          </button>
-        </div>
-        <div class="col-4">
-          <p>
-            Revisa la gráfica de tus gastos dependiendo el filtro que quieras
-            aplicar.
-          </p>
-          <button
-            class="btn btn-lg btn-outline-info"
-            onclick="openGraphExpenses()"
-          >
-            Ver gráfico
-          </button>
-        </div>
+        </dir>
       </div>
     </div>
-  </body>
+    <div class="row">
+      <div class="col-4">
+        <p>
+          Carga tu gastos diarios, o los que te hayas olvidados dependiendo la
+          fecha.
+        </p>
+        <button class="btn btn-lg btn-outline-info" onclick="openNewExpense()">
+          Cargar gastos
+        </button>
+      </div>
+      <div class="col-4">
+        <p>
+          Visualiza todos tus gastos cargados en MoneyBack.
+        </p>
+        <button class="btn btn-lg btn-outline-info" onclick="openShowExpense()">
+          Ver gastos
+        </button>
+      </div>
+      <div class="col-4">
+        <p>
+          Revisa todos tus gastos liquidados. Cada cierto tiempo se deben
+          cerrar los gastos en periodos.
+        </p>
+        <button class="btn btn-lg btn-outline-info" onclick="openClosesExpense()">
+          Gastos liquidados
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <p>
+          Revisa tus gastos marcados como favoritos y los que fueron guardados
+          por distintos motivos.
+        </p>
+        <button class="btn btn-lg btn-outline-info" onclick="openClosesExpense()">
+          Ver gastos
+        </button>
+      </div>
+      <div class="col-4">
+        <p>
+          Revisa la gráfica de tus gastos dependiendo el filtro que quieras
+          aplicar.
+        </p>
+        <button class="btn btn-lg btn-outline-info" onclick="openGraphExpenses()">
+          Ver gráfico
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

@@ -1,130 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>MoneyBack - load expense</title>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline';"
-    />
-    <link
-      rel="stylesheet"
-      href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../style.css" />
 
-    <link
-      rel="stylesheet"
-      href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>MoneyBack - load expense</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js" />
+</head>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-3 mt-4">
-          <button
-            onclick="goHome()"
-            class="btn btn-md btn-info font-weight-bold"
-          >
-            < Volver a inicio
-          </button>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3 mt-4">
+        <button onclick="goHome()" class="btn btn-md btn-info font-weight-bold">
+          < Volver a inicio </button>
+      </div>
+    </div>
+    <div class="row mb-3 mt-2">
+      <div class="col-md-12 col-12 d-flex justify-content-center">
+        <dir class="d-flex">
+          <h2 class="font-weight-bold">Carga de gastos</h2>
+          <p class="header-line">
+            Con <strong>Money Back</strong> podes organizar tus gastos de
+            manera rápida y sencilla. Controla tus finanzas cuando quieras.
+          </p>
+        </dir>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <div class="d-flex flex-column ml-4">
+          <h5>Como cargar un gasto:</h5>
+          <ul>
+            <li>Ingresar monto.</li>
+            <li>Ingresar nombre y apellido del responsable del gasto.</li>
+            <li>Ingresar nombre descriptivo al gasto.</li>
+            <li>Seleccionar fecha del gasto</li>
+            <li>Seleccionar el modo en que se realizó el gasto.</li>
+            <li>Hacer click en <strong> Agregar gasto</strong>.</li>
+          </ul>
         </div>
       </div>
-      <div class="row mb-3 mt-2">
-        <div class="col-md-12 col-12 d-flex justify-content-center">
-          <dir class="d-flex">
-            <h2 class="font-weight-bold">Carga de gastos</h2>
-            <p class="header-line">
-              Con <strong>Money Back</strong> podes organizar tus gastos de
-              manera rápida y sencilla. Controla tus finanzas cuando quieras.
-            </p>
-          </dir>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-5">
-          <div class="d-flex flex-column ml-4">
-            <h5>Como cargar un gasto:</h5>
-            <ul>
-              <li>Ingresar monto.</li>
-              <li>Ingresar nombre y apellido del responsable del gasto.</li>
-              <li>Ingresar nombre descriptivo al gasto.</li>
-              <li>Seleccionar fecha del gasto</li>
-              <li>Seleccionar el modo en que se realizó el gasto.</li>
-              <li>Hacer click en <strong> Agregar gasto</strong>.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-7 border-left-separator">
-          <div id="form-new-expenses">
-            <h4 class="font-weight-bolder">Nuevo gasto</h4>
-            <form>
-              <div class="form-group">
-                <label for="amount">Ingresar monto</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="amount"
-                  aria-describedby=""
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group">
-                <label for="amount">Responsable</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="amount"
-                  aria-describedby=""
-                  placeholder=""
-                />
-              </div>
+      <div class="col-7 border-left-separator">
+        <div id="form-new-expenses">
+          <h4 class="font-weight-bolder">Nuevo gasto</h4>
+          <form name="newExpense">
+            <div class="form-group">
+              <label for="amount">Ingresar monto</label>
+              <input name="amount" type="text" class="form-control" aria-describedby="" placeholder="" />
+            </div>
+            <div class="form-group">
+              <label for="amount">Responsable</label>
+              <input type="text" name="user" class="form-control" aria-describedby="" placeholder="" />
+            </div>
 
-              <div class="form-group">
-                <label for="amount">Nombre del gasto</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="amount"
-                  aria-describedby=""
-                  placeholder=""
-                />
-              </div>
+            <div class="form-group">
+              <label for="amount">Nombre del gasto</label>
+              <input type="text" name="name" class="form-control" aria-describedby="" placeholder="" />
+            </div>
 
-              <div class="form-group">
-                <label for="amount">Fecha del gasto</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="amount"
-                  aria-describedby=""
-                  placeholder=""
-                />
-              </div>
+            <div class="form-group">
+              <label for="amount">Fecha del gasto</label>
 
-              <div class="form-group">
-                <label for="amount">Modo del gasto</label>
-                <select name="" id="" class="form-control">
-                  <option value="">Efectivo</option>
-                  <option value="">Tarjeta debito</option>
-                  <option value="">Tarjeta crédito</option>
-                </select>
-              </div>
+              <input name="date" class="form-control" aria-describedby="" type="date" min="2018-01-01"
+                max="2030-12-31" />
+            </div>
 
-              <button
-                id="new-expenses"
-                class="btn btn-success"
-                type="submit"
-                onclick="newExpenses()"
-              >
-                Agregar gasto
-              </button>
-            </form>
-          </div>
+            <div class="form-group">
+              <label for="type">Modo del gasto</label>
+              <select name="typeExpense" id="" class="form-control">
+                <option value="Efectivo">Efectivo</option>
+                <option value="Tarjeta debito">Tarjeta debito</option>
+                <option value="Tarjeta crédito">Tarjeta crédito</option>
+              </select>
+            </div>
+
+            <button class="btn btn-success" type="submit" onclick="addExpense()">
+              Agregar gasto
+            </button>
+          </form>
         </div>
       </div>
     </div>
-    <script src="./load-expanses.js"></script>
-  </body>
+  </div>
+  <script src="./load-expanses.js"></script>
+</body>
+
 </html>
