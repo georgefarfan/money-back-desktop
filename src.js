@@ -1,3 +1,4 @@
+
 function openNewExpense() {
   window.location.href = "./pages/load-expanse.html";
 }
@@ -13,4 +14,3 @@ function openClosesExpense() {
 function openGraphExpenses() {
   window.location.href = "./pages/graph-expanses.html";
 }
-

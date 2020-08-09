@@ -7,6 +7,7 @@
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js" />
 </head>
 
@@ -15,14 +16,14 @@
     <div class="row">
       <div class="col-3 mt-4">
         <button onclick="goHome()" class="btn btn-md btn-info font-weight-bold">
-          < Volver a inicio </button>
+          <i class="fa fa-arrow-left"></i> Volver a inicio </button>
       </div>
     </div>
 
     <div class="row mb-3 mt-2">
       <div class="col-md-12 col-12 d-flex justify-content-center">
         <dir class="d-flex">
-          <h2 class="font-weight-bold">Carga de gastos</h2>
+          <h2 class="font-weight-bold"><i class="fa fa-wallet"></i> Carga de gastos</h2>
           <p class="header-line">
             Con <strong>Money Back</strong> podes organizar tus gastos de
             manera rápida y sencilla. Controla tus finanzas cuando quieras.
@@ -32,8 +33,16 @@
     </div>
 
     <div class="row">
-      <div class="col-12 d-flex justify-content-end">
-        <button class="btn btn-lg btn-info mb-2" onclick="loadExpenses()">Actualizar</button>
+      <div class="col-12 d-flex justify-content-between">
+        <div>
+          <h4><strong>Total gastado: </strong><span id="totalAmount"></span></h4>
+        </div>
+        <div>
+          <button class="btn btn-md btn-info mb-2" onclick="loadExpenses()"><i class="fa fa-spinner"></i>
+            Actualizar</button>
+          <button class="btn btn-md btn-secondary mb-2 ml-2"><i class="fa fa-file-download"></i>
+            Descargar PDF</button>
+        </div>
       </div>
     </div>
     <div>
@@ -55,6 +64,7 @@
   </div>
   <script src="./list-expanse.js"></script>
   <script src="../environments/environment-local.js" type="module"></script>
+  <script src="../libs/moment/moment.js"></script>
 </body>
 
 </html>

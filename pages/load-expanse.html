@@ -8,84 +8,102 @@
   <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../styles/style.css" />
   <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js" />
+  <link rel="stylesheet" href="../libs/fontawesome/css/all.css">
+  <link rel="stylesheet" href="../styles/spinner.css">
+  <link rel="stylesheet" href="../styles/toast.css">
 </head>
 
 <body>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-3 mt-4">
-        <button onclick="goHome()" class="btn btn-md btn-info font-weight-bold">
-          < Volver a inicio </button>
-      </div>
-    </div>
-    <div class="row mb-3 mt-2">
-      <div class="col-md-12 col-12 d-flex justify-content-center">
-        <dir class="d-flex">
-          <h2 class="font-weight-bold">Carga de gastos</h2>
-          <p class="header-line">
-            Con <strong>Money Back</strong> podes organizar tus gastos de
-            manera rápida y sencilla. Controla tus finanzas cuando quieras.
-          </p>
-        </dir>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-5">
-        <div class="d-flex flex-column ml-4">
-          <h5>Como cargar un gasto:</h5>
-          <ul>
-            <li>Ingresar monto.</li>
-            <li>Ingresar nombre y apellido del responsable del gasto.</li>
-            <li>Ingresar nombre descriptivo al gasto.</li>
-            <li>Seleccionar fecha del gasto</li>
-            <li>Seleccionar el modo en que se realizó el gasto.</li>
-            <li>Hacer click en <strong> Agregar gasto</strong>.</li>
-          </ul>
+    <div id="load-expenses">
+      <div class="row">
+        <div class="col-3 mt-4">
+          <button onclick="goHome()" class="btn btn-md btn-info font-weight-bold">
+            <i class="fa fa-arrow-left"></i> Volver a inicio </button>
         </div>
       </div>
-      <div class="col-7 border-left-separator">
-        <div id="form-new-expenses">
-          <h4 class="font-weight-bolder">Nuevo gasto</h4>
-          <form name="newExpense">
-            <div class="form-group">
-              <label for="amount">Ingresar monto</label>
-              <input name="amount" type="text" class="form-control" aria-describedby="" placeholder="" />
-            </div>
-            <div class="form-group">
-              <label for="amount">Responsable</label>
-              <input type="text" name="user" class="form-control" aria-describedby="" placeholder="" />
-            </div>
+      <div class="row mb-3 mt-2">
+        <div class="col-md-12 col-12 d-flex justify-content-center">
+          <dir class="d-flex">
+            <h2 class="font-weight-bold"> <i class="fa fa-wallet"></i> Carga de gastos</h2>
+            <p class="header-line">
+              Con <strong>Money Back</strong> podes organizar tus gastos de
+              manera rápida y sencilla. Controla tus finanzas cuando quieras.
+            </p>
+          </dir>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5">
+          <div class="d-flex flex-column ml-4">
+            <h5>Como cargar un gasto:</h5>
+            <ul>
+              <li>Ingresar monto.</li>
+              <li>Ingresar nombre y apellido del responsable del gasto.</li>
+              <li>Ingresar nombre descriptivo al gasto.</li>
+              <li>Seleccionar fecha del gasto</li>
+              <li>Seleccionar el modo en que se realizó el gasto.</li>
+              <li>Hacer click en <strong> Agregar gasto</strong>.</li>
+            </ul>
+          </div>
+        </div>
 
-            <div class="form-group">
-              <label for="amount">Nombre del gasto</label>
-              <input type="text" name="name" class="form-control" aria-describedby="" placeholder="" />
-            </div>
+        <div class="col-7 border-left-separator">
+          <div id="form-new-expenses">
+            <h4 class="font-weight-bolder">Nuevo gasto</h4>
+            <form name="newExpense" onchange="detectChanges()" novalidate>
+              <div class="form-group">
+                <label for="amount">Ingresar monto</label>
+                <input name="amount" type="number" class="form-control" aria-describedby="" placeholder="" />
+              </div>
+              <div class="form-group">
+                <label for="amount">Responsable</label>
+                <input type="text" name="user" class="form-control" aria-describedby="" placeholder="" />
+              </div>
 
-            <div class="form-group">
-              <label for="amount">Fecha del gasto</label>
+              <div class="form-group">
+                <label for="amount">Nombre del gasto</label>
+                <input type="text" name="name" class="form-control" aria-describedby="" placeholder="" />
+              </div>
 
-              <input name="date" class="form-control" aria-describedby="" type="date" min="2018-01-01"
-                max="2030-12-31" />
-            </div>
+              <div class="form-group">
+                <label for="amount">Fecha del gasto</label>
+                <input name="date" class="form-control" aria-describedby="" type="date" min="2018-01-01"
+                  max="2030-12-31" />
+              </div>
 
-            <div class="form-group">
-              <label for="type">Modo del gasto</label>
-              <select name="typeExpense" id="" class="form-control">
-                <option value="Efectivo">Efectivo</option>
-                <option value="Tarjeta debito">Tarjeta debito</option>
-                <option value="Tarjeta crédito">Tarjeta crédito</option>
-              </select>
-            </div>
+              <div class="form-group">
+                <label for="type">Modo del gasto</label>
+                <select name="typeExpense" class="form-control">
+                  <option value="Efectivo">Efectivo</option>
+                  <option value="Tarjeta debito">Tarjeta debito</option>
+                  <option value="Tarjeta crédito">Tarjeta crédito</option>
+                </select>
+              </div>
 
-            <button class="btn btn-success" type="submit" onclick="addExpense()">
-              Agregar gasto
-            </button>
-          </form>
+              <button id="btnNewExpense" class="btn btn-success" disabled>
+                <i class="fa fa-plus"></i> Agregar gasto
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <script src="./load-expanses.js"></script>
 </body>
+
+<svg id="loader" style="display: none;" class="spinner" viewBox="0 0 50 50">
+  <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+</svg>
+
+<div class="my-toast" id="my-toast" style="display: none;">
+  <div style="margin: 10px;">
+    <div class="my-toast--title" id="toast-title">
+    </div>
+    <div class="my-toast--description" id="toast-content">
+    </div>
+  </div>
+</div>
 
 </html>

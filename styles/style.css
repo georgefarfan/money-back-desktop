@@ -11,3 +11,24 @@
 .border-left-separator {
   border-left: 0.5px solid #dadada;
 }
+
+.row-item {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #c4c4c4;
+}
+
+.disabled-block {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.enabled-block {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
