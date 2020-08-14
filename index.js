@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require("electron");
-const ejse = require("ejs-electron");
+const ipcMain = require("electron").ipcMain;
+const firebase = require("./libs/firebase/firebase-config");
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
@@ -32,4 +33,14 @@ app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
+});
+
+
+ipcMain.on("firebase-signin", (event, data) => {
+  firebase.signin(data.user, data.password)
+});
+
+
+ipcMain.on("firebase-signup", (event, data) => {
+  firebase.signup(data.user, data.password)
 });

@@ -1,8 +1,4 @@
-
-
-
-
-
+"use strict";
 
 function goHome() {
   window.history.back();
@@ -36,13 +32,15 @@ document.getElementById("btnNewExpense").addEventListener("click", function (eve
   let name = document.newExpense.name.value;
   let date = document.newExpense.date.value;
   let type = document.newExpense.typeExpense.value;
+  let description = document.newExpense.description.value;
 
   let data = {
-    user: user,
+    user,
     amount: Number(amount),
-    name: name,
-    date: date,
-    type: type
+    name,
+    date,
+    type,
+    description
   };
 
   showLoading();

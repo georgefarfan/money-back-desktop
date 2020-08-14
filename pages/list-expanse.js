@@ -1,4 +1,8 @@
+"use strict";
+
+
 const environment = import("../environments/environment-local.js");
+require('moment/locale/es.js');
 
 console.log("ENV => ", environment);
 function goHome() {
@@ -25,7 +29,8 @@ function loadExpenses() {
         createTH(`$ ${item.amount.toFixed(2)}`),
         createTH(item.name),
         createTH(moment(item.date).format("DD/MM/yyyy")),
-        createTH(item.type)];
+        createTH(item.type),
+        createTH(item.description)];
       elements.forEach(element => {
         tr.appendChild(element);
       })
@@ -46,3 +51,14 @@ function createTH(text) {
 
 loadExpenses();
 
+
+setTimeout(() => {
+  let diff = moment().daysInMonth() - moment().date();
+  let message = diff > 0 ? `aún falta(n) ${diff} dia(s) para cerrar el mes de ${moment().format('MMMM')}` : ``;
+  document.getElementById("notice").innerText = message;
+
+  // <strong>Atención:</strong>
+
+
+
+}, 3000);

@@ -1,0 +1,27 @@
+.badge {
+    position: relative;
+    background-color: #259dbd;
+    font-weight: 400;
+    border: 1px solid;
+    margin-right: 5px;
+}
+
+.badge p {
+    color: #f4f4f4;
+    margin-bottom: 0px;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.badge  i {
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    color: #444444;
+    cursor: pointer;
+}
+
+.badge  i:hover {
+    color: #e74747;
+}

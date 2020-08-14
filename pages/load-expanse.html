@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../libs/fontawesome/css/all.css">
   <link rel="stylesheet" href="../styles/spinner.css">
   <link rel="stylesheet" href="../styles/toast.css">
+  <link rel="stylesheet" href="../styles/badge.css">
 </head>
 
 <body>
@@ -52,34 +53,73 @@
           <div id="form-new-expenses">
             <h4 class="font-weight-bolder">Nuevo gasto</h4>
             <form name="newExpense" onchange="detectChanges()" novalidate>
-              <div class="form-group">
-                <label for="amount">Ingresar monto</label>
-                <input name="amount" type="number" class="form-control" aria-describedby="" placeholder="" />
-              </div>
-              <div class="form-group">
-                <label for="amount">Responsable</label>
-                <input type="text" name="user" class="form-control" aria-describedby="" placeholder="" />
-              </div>
-
-              <div class="form-group">
-                <label for="amount">Nombre del gasto</label>
-                <input type="text" name="name" class="form-control" aria-describedby="" placeholder="" />
-              </div>
-
-              <div class="form-group">
-                <label for="amount">Fecha del gasto</label>
-                <input name="date" class="form-control" aria-describedby="" type="date" min="2018-01-01"
-                  max="2030-12-31" />
+              <div class="form-row">
+                <div class="col">
+                  <label for="amount">Ingresar monto</label>
+                  <input name="amount" type="number" class="form-control" aria-describedby="" placeholder="" />
+                </div>
+                <div class="col">
+                  <label for="type">Modo de pago</label>
+                  <select name="typeExpense" class="form-control">
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Tarjeta debito">Tarjeta debito</option>
+                    <option value="Tarjeta crédito">Tarjeta crédito</option>
+                  </select>
+                </div>
               </div>
 
-              <div class="form-group">
-                <label for="type">Modo del gasto</label>
-                <select name="typeExpense" class="form-control">
-                  <option value="Efectivo">Efectivo</option>
-                  <option value="Tarjeta debito">Tarjeta debito</option>
-                  <option value="Tarjeta crédito">Tarjeta crédito</option>
+              <div class="form-row">
+                <div class="col">
+                  <label for="amount">Responsable</label>
+                  <input type="text" name="user" class="form-control" aria-describedby="" placeholder="" />
+                </div>
+
+                <div class="col">
+                  <label for="amount">Fecha</label>
+                  <input name="date" class="form-control" aria-describedby="" type="date" min="2018-01-01"
+                    max="2030-12-31" />
+                </div>
+              </div>
+
+              <div class="form-group mt-2">
+                <label for="name">Gastos involucrados</label>
+                <select name="name" class="form-control">
+                  <option value="Comestibles">Comestibles</option>
+                  <option value="Combustible">Combustible</option>
+                  <option value="Víveres">Tarjeta crédito</option>
+                  <option value="Materiales">Materiales</option>
+                  <option value="Artículos de limpieza">Artículos de limpieza</option>
+                  <option value="Medicamentos">Medicamentos</option>
+                  <option value="Alimentos">Alimentos</option>
+                  <option value="Artículos para la casa">Artículos para la casa</option>
                 </select>
+
+                <!--
+
+                <div class="badges mt-2 d-flex">
+                  <div class="badge">
+                    <p>Comestibles</p>
+                    <i class="fa fa-times-circle"></i>
+                  </div>
+                  <div class="badge">
+                    <p>Materiales</p>
+                    <i class="fa fa-times-circle"></i>
+                  </div>
+                  <div class="badge">
+                    <p>Alimentos</p>
+                    <i class="fa fa-times-circle"></i>
+                  </div>
+                </div>
+
+                -->
               </div>
+
+              <div class="form-group ">
+                <label for="description">Descripción</label>
+                <textarea class="form-control" name="description" id="" cols="30" rows="2"></textarea>
+              </div>
+
+
 
               <button id="btnNewExpense" class="btn btn-success" disabled>
                 <i class="fa fa-plus"></i> Agregar gasto
