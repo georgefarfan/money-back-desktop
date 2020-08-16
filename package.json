@@ -4,13 +4,50 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "install-app-deps",
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "author": "",
+  "keywords": [
+    "BagOfCoins",
+    "Electron",
+    "Mongo"
+  ],
+  "author": "Jorge Farfan<deecon_daryl@gmail.com>",
   "license": "ISC",
+  "build": {
+    "appId": "bagOfCoins-v1.0",
+    "asar": false,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
   "devDependencies": {
-    "electron": "^9.1.2"
+    "electron": "^9.1.2",
+    "electron-builder": "^22.8.0",
+    "electron-rebuild": "^1.11.0"
   },
   "dependencies": {
     "chart.js": "^2.9.3",
