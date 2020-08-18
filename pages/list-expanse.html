@@ -1,76 +1,95 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bag Coins - list expenses</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link
+      rel="stylesheet"
+      href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>MoneyBack - list expenses</title>
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-  <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../styles/style.css" />
-  <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js" />
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-3 mt-4">
-        <button onclick="goHome()" class="btn btn-md btn-info font-weight-bold">
-          <i class="fa fa-arrow-left"></i> Volver a inicio </button>
-      </div>
-    </div>
-
-    <div class="row mb-3 mt-2">
-      <div class="col-md-12 col-12 d-flex justify-content-center">
-        <dir class="d-flex">
-          <h2 class="font-weight-bold"><i class="fa fa-wallet"></i> Carga de gastos</h2>
-          <p class="header-line">
-            Con <strong>Money Back</strong> podes organizar tus gastos de
-            manera rápida y sencilla. Controla tus finanzas cuando quieras.
-          </p>
-        </dir>
-      </div>
-    </div>
-
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <p class="mb-0"><strong>Atención:</strong><span id="notice" class="ml-1"></span></p>
-    </div>
-
-
-    <div class="row">
-      <div class="col-12 d-flex justify-content-between">
-        <div>
-          <h4><strong>Total gastado: </strong><span id="totalAmount"></span></h4>
-        </div>
-        <div>
-          <button class="btn btn-md btn-info mb-2" onclick="loadExpenses()"><i class="fa fa-spinner"></i>
-            Actualizar</button>
-          <button class="btn btn-md btn-secondary mb-2 ml-2"><i class="fa fa-file-download"></i>
-            Descargar PDF</button>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 mt-4">
+          <button
+            onclick="goHome()"
+            class="btn btn-md btn-info font-weight-bold"
+          >
+            <i class="fa fa-arrow-left"></i> Volver a inicio
+          </button>
         </div>
       </div>
-    </div>
-    <div>
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Usuario</th>
-            <th scope="col">Monto</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Tipo de gasto</th>
-            <th scope="col">Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
 
-    </div>
-  </div>
-  <script src="./list-expanse.js"></script>
-  <script src="../environments/environment-local.js" type="module"></script>
-  <script src="../libs/moment/moment.js"></script>
-</body>
+      <div class="row mb-3 mt-2">
+        <div class="col-md-12 col-12 d-flex justify-content-center">
+          <dir class="d-flex">
+            <h2 class="font-weight-bold">
+              <i class="fa fa-wallet"></i> Carga de gastos
+            </h2>
+            <p class="header-line">
+              Con <strong>Bag Coins</strong> podes organizar tus gastos de
+              manera rápida y sencilla. Controla tus finanzas cuando quieras.
+            </p>
+          </dir>
+        </div>
+      </div>
 
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <p class="mb-0">
+          <strong>Atención:</strong><span id="notice" class="ml-1"></span>
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between">
+          <div>
+            <h4>
+              <strong>Total gastado: </strong><span id="totalAmount"></span>
+            </h4>
+          </div>
+          <div>
+            <button class="btn btn-md btn-info mb-2" onclick="loadExpenses()">
+              <i class="fa fa-spinner"></i> Actualizar
+            </button>
+            <button class="btn btn-md btn-secondary mb-2 ml-2">
+              <i class="fa fa-file-download"></i> Descargar PDF
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Usuario</th>
+              <th scope="col">Monto</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Tipo de gasto</th>
+              <th scope="col">Descripción</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./list-expanse.js"></script>
+    <script src="../environments/environment-local.js" type="module"></script>
+    <script src="../node_modules/moment/min/moment.min.js"></script>
+    <script src="../node_modules/moment/locale/es.js">
+      moment.locale("es");
+    </script>
+  </body>
 </html>

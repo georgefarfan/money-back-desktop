@@ -1,4 +1,4 @@
-
+"use strict";
 
 const { ipcRenderer } = require("electron");
 
@@ -18,9 +18,18 @@ function openGraphExpenses() {
   window.location.href = "./pages/graph-expanses.html";
 }
 
-setTimeout(() => {
-  ipcRenderer.send("firebase-signin", {
+function signIn(mode) {
+  let loginResponse = ipcRenderer.sendSync("firebase-signin", {
     user: "jorge.farfan@live.com.ar",
-    password: "Stichjor1990"
+    password: "Stichjor1990",
   });
-}, 2000);
+  console.log("RESPONSE LOGIN => ", loginResponse);
+}
+
+function detectChanges() {
+  let user = document.logIn.user.value;
+  let password = document.logIn.password.value;
+  document.getElementById("btnLogin").disabled = !(
+    user !== "" && password !== ""
+  );
+}

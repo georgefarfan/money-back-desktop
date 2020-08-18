@@ -2,7 +2,7 @@
   "name": "money-back-desktop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "postinstall": "install-app-deps",
     "start": "electron .",
@@ -50,6 +50,7 @@
     "electron-rebuild": "^1.11.0"
   },
   "dependencies": {
+    "bootstrap": "^4.5.2",
     "chart.js": "^2.9.3",
     "ejs-electron": "^2.1.0",
     "firebase": "^7.17.2",

@@ -1,5 +1,5 @@
 .header-line {
-  border-bottom: 2px solid rgba(23, 162, 184, 0.5);
+  border-bottom: 2px solid #17a2b880;
 }
 
 #new-expenses {
@@ -31,4 +31,39 @@ tr:hover {
   pointer-events: all;
 }
 
+.my-modal {
+  backdrop-filter: blur(3px);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 16777270;
+}
 
+.my-modal-content {
+  left: 35%;
+  top: 30%;
+  position: absolute;
+  border: none;
+  display: flex;
+  z-index: 99999;
+  flex-direction: column;
+  background: white;
+  border: 0.5px solid #eaeaea;
+  padding: 20px;
+  box-shadow: 0 0px 0px 0 #6f6f6f, 0 0px 5px 0 #6f6f6f;
+}
+
+.btn-gmail {
+  background-color: #bb2424;
+}
+
+.btn-facebook {
+  background-color: #2e57c7;
+  color: #eaeaea;
+}
+
+.btn-bag-coins {
+  background-color: #41bcd0;
+}

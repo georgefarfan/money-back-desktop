@@ -1,80 +1,165 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MoneyBack</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link
+      rel="stylesheet"
+      href="./libs/bootstrap-4.5.0-dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./libs/bootstrap-4.5.0-dist/js/bootstrap.min.js"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./libs/fontawesome/css/all.css" />
+  </head>
+  <div class="my-modal">
+    <div class="my-modal-content">
+      <form name="logIn" onchange="detectChanges()" novalidate>
+        <div class="form-group">
+          <i class="fa fa-user"></i>
+          <label for="amount">Usuario/Email</label>
+          <input
+            type="text"
+            name="user"
+            class="form-control"
+            aria-describedby=""
+            placeholder=""
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-key"></i>
+          <label for="amount">Contraseña</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            aria-describedby=""
+            placeholder=""
+          />
+        </div>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>MoneyBack</title>
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-  <link rel="stylesheet" href="./libs/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="./libs/fontawesome/css/all.css">
-  <link rel="stylesheet" href="./libs/bootstrap-4.5.0-dist/js/bootstrap.min.js" />
-  <script src="./src.js"></script>
-</head>
+        <p>¿Te olvidaste la contraseña?</p>
 
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-12 d-flex justify-content-center p-5">
-        <dir class="d-flex">
-          <h2 class="font-weight-bold"> <i class="fa fa-wallet"></i> Money Back</h2>
-          <p class="header-line ">
-            Con <strong>Money Back</strong> podes organizar tus gastos de
-            manera rápida y sencilla. Controla tus finanzas.
-          </p>
-        </dir>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-4">
-        <p>
-          Carga tu gastos diarios, o los que te hayas olvidados dependiendo la
-          fecha.
-        </p>
-        <button class="btn btn-lg btn-outline-info" onclick="openNewExpense()">
-          Cargar gastos
-        </button>
-      </div>
-      <div class="col-4">
-        <p>
-          Visualiza todos tus gastos cargados en MoneyBack.
-        </p>
-        <button class="btn btn-lg btn-outline-info" onclick="openShowExpense()">
-          Ver gastos
-        </button>
-      </div>
-      <div class="col-4">
-        <p>
-          Revisa todos tus gastos liquidados. Cada cierto tiempo se deben
-          cerrar los gastos en periodos.
-        </p>
-        <button class="btn btn-lg btn-outline-info" onclick="openClosesExpense()">
-          Gastos liquidados
-        </button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-4">
-        <p>
-          Revisa tus gastos marcados como favoritos y los que fueron guardados
-          por distintos motivos.
-        </p>
-        <button class="btn btn-lg btn-outline-info" onclick="openClosesExpense()">
-          Ver gastos
-        </button>
-      </div>
-      <div class="col-4">
-        <p>
-          Revisa la gráfica de tus gastos dependiendo el filtro que quieras
-          aplicar.
-        </p>
-        <button class="btn btn-lg btn-outline-info" onclick="openGraphExpenses()">
-          Ver gráfico
-        </button>
-      </div>
+        <div class="d-flex flex-column">
+          <button
+            id="btnLogin"
+            class="btn btn-bag-coins"
+            onclick="signIn('')"
+            disabled
+          >
+            <i class="fa fa-sign-in-alt"></i> Iniciar sesión
+          </button>
+          <button id="newAccount" class="btn btn-warning mt-1">
+            Crear cuenta
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 
-</body>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-12 d-flex justify-content-center p-5">
+          <dir class="d-flex">
+            <h2 class="font-weight-bold">
+              <i class="fa fa-wallet"></i> Bag Coins
+            </h2>
+            <p class="header-line">
+              Con <strong>Bag Coins</strong> podes organizar tus gastos de
+              manera rápida y sencilla. Controla tus finanzas.
+            </p>
+          </dir>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p>
+            Carga tu gastos diarios, o los que te hayas olvidados dependiendo la
+            fecha.
+          </p>
+          <button
+            class="btn btn-lg btn-outline-info"
+            onclick="openNewExpense()"
+          >
+            Cargar gastos
+          </button>
+        </div>
+        <div class="col-4">
+          <p>
+            Visualiza todos tus gastos cargados en MoneyBack.
+          </p>
+          <button
+            class="btn btn-lg btn-outline-info"
+            onclick="openShowExpense()"
+          >
+            Ver gastos
+          </button>
+        </div>
+        <div class="col-4">
+          <p>
+            Revisa todos tus gastos liquidados. Cada cierto tiempo se deben
+            cerrar los gastos en periodos.
+          </p>
+          <button
+            class="btn btn-lg btn-outline-info"
+            onclick="openClosesExpense()"
+          >
+            Gastos liquidados
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p>
+            Revisa tus gastos marcados como favoritos y los que fueron guardados
+            por distintos motivos.
+          </p>
+          <button
+            class="btn btn-lg btn-outline-info"
+            onclick="openClosesExpense()"
+          >
+            Ver gastos
+          </button>
+        </div>
+        <div class="col-4">
+          <p>
+            Revisa la gráfica de tus gastos dependiendo el filtro que quieras
+            aplicar.
+          </p>
+          <button
+            class="btn btn-lg btn-outline-info"
+            onclick="openGraphExpenses()"
+          >
+            Ver gráfico
+          </button>
+        </div>
+      </div>
+    </div>
 
+    <script src="./node_modules/firebase/firebase-app.js"></script>
+    <script src="./node_modules/firebase/firebase-auth.js"></script>
+    <script src="./node_modules/firebase/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAizLoQq7A_954zDDVjeMq4I_ZVa6gLlpo",
+        authDomain: "freelance-apps-8f81c.firebaseapp.com",
+        databaseURL: "https://freelance-apps-8f81c.firebaseio.com",
+        projectId: "freelance-apps-8f81c",
+        storageBucket: "freelance-apps-8f81c.appspot.com",
+        messagingSenderId: "440028828781",
+        appId: "1:440028828781:web:6582acb3c40c8247359b64",
+        measurementId: "G-W2E4WXLYZW",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="./src.js"></script>
+  </body>
 </html>

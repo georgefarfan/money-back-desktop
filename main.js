@@ -9,6 +9,8 @@ function createWindow() {
     resizable: false,
     webPreferences: {
       nodeIntegration: true,
+      allowRunningInsecureContent: true,
+      devTools: true,
     },
   });
 
@@ -35,12 +37,10 @@ app.on("activate", () => {
   }
 });
 
-
 ipcMain.on("firebase-signin", (event, data) => {
-  firebase.signin(data.user, data.password)
+  event.returnValue = firebase.signin(data.user, data.password);
 });
 
-
 ipcMain.on("firebase-signup", (event, data) => {
-  firebase.signup(data.user, data.password)
+  event.returnValue = firebase.signup(data.user, data.password);
 });
